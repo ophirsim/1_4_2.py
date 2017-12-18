@@ -9,36 +9,33 @@ import os.path
 
 # Open the files in the same directory as the Python script
 directory = os.path.dirname(os.path.abspath(__file__))  
-student_file = os.path.join(directory, 'ophir.jpg')
+student_file = os.path.join(directory, 'pepe the meme.png')
 
 # Open and show the student image in a new Figure window
-ophir_img = PIL.Image.open(student_file)
+pepe_img = PIL.Image.open(student_file)
 fig, axes = plt.subplots(1, 2)
-axes[0].imshow(ophir_img, interpolation='none')
+axes[0].imshow(pepe_img, interpolation='none')
 
 # Display student in second axes and set window to the right eye
-axes[1].imshow(ophir_img, interpolation='none')
-axes[1].set_xticks(range(1050, 1410, 100))
-axes[1].set_xlim(1050, 1400) #coordinates measured in plt, and tried in iPython
-axes[1].set_ylim(1100, 850)
+axes[1].imshow(pepe_img, interpolation='none')
+axes[1].set_ylim(400, 200)
 fig.show()
 
 # Open, resize, and display earth
-earth_file = os.path.join(directory, 'nandy.jpg')
-earth_img = PIL.Image.open(earth_file)
-earth_small = earth_img.resize((2000, 87)) #eye width and height measured in plt
+ree_file = os.path.join(directory, 'ree.png')
+ree_img = PIL.Image.open(ree_file)
+ree_small = ree_img.resize((200, 100)) #eye width and height measured in plt
 fig2, axes2 = plt.subplots(1, 2)
-axes2[0].imshow(earth_img)
-axes2[1].imshow(earth_small)
+axes2[0].imshow(ree_img)
+axes2[1].imshow(ree_small)
 fig2.show()
 
 # Paste earth into right eye and display
 # Uses alpha from mask
-student_img.paste(earth_small, (1162, 966), mask=earth_small) 
+pepe_img.paste(ree_small, (300, 300), mask=ree_small) 
 # Display
 fig3, axes3 = plt.subplots(1, 2)
-axes3[0].imshow(student_img, interpolation='none')
-axes3[1].imshow(student_img, interpolation='none')
-axes3[1].set_xlim(500, 1500)
-axes3[1].set_ylim(1130, 850)
+axes3[0].imshow(pepe_img, interpolation='none')
+axes3[1].set_ylim(400, 200)
+axes3[1].imshow(pepe_img, interpolation='none')
 fig3.show()
